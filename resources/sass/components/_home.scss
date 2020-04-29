@@ -1,0 +1,39 @@
+body.site {
+    .sidenav-left {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20vw;
+        height: 100vh;
+        background: blanchedalmond;
+        z-index: 2;
+        h1 {
+            position: absolute;
+            top: 50%;
+            margin: auto;
+            width: 100%;
+            transform: translateY(-50%);
+            font-family: $monoton;
+            font-size: 2.750rem;
+            line-height: 2.750rem;
+            text-align: center;
+            text-transform: uppercase;
+            span {
+                margin: 0;
+                padding: 0;
+                font-size: 3rem;
+                line-height: 0rem;
+                text-transform: lowercase;
+            }
+        }
+    }
+    .central {
+        position: fixed;
+        top: 0;
+        left: 20vw;
+        height: 100vh;
+        width: 80vw;
+        overflow: auto;
+        z-index: 1;
+    }
+}

@@ -1,0 +1,174 @@
+body.app {
+    font-family: $montserrat;
+    
+    [class*=sidebar-dark] .brand-link {
+        margin: 20px 0;
+        border: none;
+    }
+
+    a, a:hover, a:visited, a:link {
+        color: blue;
+        text-decoration: none;
+    }
+    a, a:hover, a:visited, a:link {
+        &.btn {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    ul {
+        &.navbar-nav,
+        &.nav {
+            li {
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    h2 {
+        i {
+            color: black;
+            font-size: 32px;
+        }
+    }
+
+    h5 {
+        &.card-title {
+            font-size: 21px;
+            font-weight: 600;
+            line-height: 100%;
+            color: white;
+        }
+    }
+
+    img {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        height: auto;
+        &.thumb {
+            max-width: 60px;
+            height: auto;
+        }
+    }
+
+    .upper {
+        text-transform: uppercase;
+    }
+
+    .sidebar {
+        margin-top: 160px;
+    }
+    .nav-sidebar .nav-link p {
+        color: white;
+    }
+
+    .profile-image {
+        width: 100%;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .alert {
+        p {
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 600;
+            color: white;
+        }
+    }
+    .radio-initials-box {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        margin: 20px 0;
+        clear: both;
+        .radio-initials-color {
+            margin: 0;
+            padding: 10px 10px;
+            color: white;
+            border-radius: 5px;
+            min-width: 130px;
+            display: inline-block;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+
+    div.row.col2ImgTxt, div.row.col2TxtImg, div.row.col2, div.row.col3 {
+        border: 2px dashed blue;
+        padding: 2px;
+        .col-sm-4, col-sm-8, .col-sm-6 {
+            padding: 20px;
+            border: 2px dotted #999;
+        }
+    }
+
+    .include-accordion {
+        padding: 20px;
+        border: 2px dashed blue;
+        &:before {
+            content: 'Acordeon';
+        }
+        .accordion {
+            display: none;
+        }
+    }
+    .include-slider {
+        padding: 20px;
+        border: 2px dashed blue;
+        &:before {
+            content: 'Slider';
+        }
+        .slide {
+            display: none;
+        }
+    }
+
+    .imageUploadPreview {
+        background: #ccc;
+        border: 2px dashed green;
+        padding: 10px;
+    }
+
+    .note-editable {
+        &.card-block {
+            a.button, 
+            a:link.visited, 
+            a:link.button {
+                display: inline-block;
+                height: 55px;
+                margin: 30px auto;
+                padding: 14px 25px;
+                box-shadow: -4.5px 5.362px 13px 0px rgba(72, 72, 72, 0.3);
+                font-size: 15px;
+                font-family: "Raleway", sans-serif;
+                font-weight: bold;
+                color: white;
+                line-height: 1.667;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 30px 30px 30px 30px;
+                -moz-border-radius: 30px 30px 30px 30px;
+                -webkit-border-radius: 30px 30px 30px 30px;
+                border: 0;
+                cursor: pointer;
+                &.blue {
+                    background: blue;
+                }
+                &:hover {
+                    background: gray;
+                }
+            }
+        }
+    }
+
+}

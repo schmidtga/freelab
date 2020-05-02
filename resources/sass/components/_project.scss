@@ -20,18 +20,20 @@ body.site {
             .text-container {
                 position: absolute;
                 width: 100%;
-                top: 90vh;
+                top: 95vh;
                 background-color: #F8F7F3;
-                background: rgba(255, 255, 255, 0.5);
+                background: rgba(255, 255, 255, 0);
                 z-index: 9;
                 .title-text-container {
                     position: relative;
-                    height: 10vh;
+                    height: 5vh;
+                    background-color: #F8F7F3;
+                    background: rgba(255, 255, 255, 1);
                     h1 {
-                        padding: 20px 0;
+                        padding: 5px 0;
                         font-family: $montserrat;
-                        font-size: 3rem;
-                        line-height: 3rem;
+                        font-size: 1.750rem;
+                        line-height: 2rem;
                         font-weight: bold;
                         text-transform: uppercase;
                         text-align: center;
@@ -39,11 +41,11 @@ body.site {
                     }
                     span.arrow-up {
                         position: absolute;
-                        top: 20px;
+                        top: 10px;
                         right: 20px;
                         i {
                             color: #614D40;
-                            font-size: 3rem;
+                            font-size: 2rem;
                         }
                     }
                 }

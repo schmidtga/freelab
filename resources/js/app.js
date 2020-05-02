@@ -2,18 +2,22 @@ require('./bootstrap');
 
 (function($) {
 
-    // DOCUMENTO
+    function setDivOpacity($div, st) {
+        $div.css({ 'background' : 'rgba(255, 255, 255, ' +  (0 + st/800) + ')' });
+    };
+
     $(document).ready(function() {
 
-        var div = $('.text-container');
+        var $div = $('.text-container');
+        var st = $(this).scrollTop();
 
+        setDivOpacity($div, st);
 
         $(window).on('scroll', function() {
-
-            var st = $(this).scrollTop();
-            div.css({ 'background' : 'rgba(255, 255, 255, ' +  (0.5 + st/1000) + ')' });
-
-        }); 
+            st = $(this).scrollTop();
+            setDivOpacity($div, st);
+        });
 
     });
+    
 })(jQuery);

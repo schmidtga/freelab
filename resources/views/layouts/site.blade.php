@@ -24,13 +24,8 @@
 
 <body class="site">
 
-    <main>
-        <div class="container-fluid">
-            @include('site.inc.sidebar-left')
-            <div class="central">
-                @yield('content')
-            </div>
-    </main>
+        @include('site.inc.navbar-top')
+        @yield('content')
         
     <!-- Scripts -->
     <script

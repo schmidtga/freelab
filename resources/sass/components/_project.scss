@@ -1,33 +1,57 @@
 body.site {
-    .central {
-        .img-body {
-            position: fixed;
-            top: 0;
-            overflow: hidden;
-            img {
-                max-width: 100%;
-                height: auto;
-                margin: auto;
-                opacity: 1;
-            }
-        }
-        .text-body {
-            position: absolute;
-            top: 50vh;
-            left: 0;
+    .body-container {
+        width: auto;
+        max-width: 1920px;
+        padding-top: 0px;
+        padding-left: 0%;
+        padding-right: 0%;
+        margin: auto;
+        margin-left: auto;
+        clear: none;
+        float: none;
+        background-color: black;
+        .img-container {
+            position: relative;
             width: 100%;
-            padding: 100px 20px;
-            background: #ccc;
-            opacity: 0;
-            z-index: 100;
-            h1 {
-                font-size: 4.5rem;
-                text-align: center;
-                color: white;
-            }
-            p {
-                text-align: center;
-                color: white;
+            min-height: 920px;
+            height: 2000px;
+            margin: 0 auto 0 auto;
+            text-align: center;
+            .text-container {
+                position: absolute;
+                width: 100%;
+                top: 90vh;
+                background-color: #F8F7F3;
+                background: rgba(255, 255, 255, 0.5);
+                z-index: 9;
+                .title-text-container {
+                    position: relative;
+                    height: 10vh;
+                    h1 {
+                        padding: 20px 0;
+                        font-family: $montserrat;
+                        font-size: 3rem;
+                        line-height: 3rem;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: #614D40;
+                    }
+                    span.arrow-up {
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        i {
+                            color: #614D40;
+                            font-size: 3rem;
+                        }
+                    }
+                }
+                p {
+                    font-family: $montserrat;
+                    text-align: center;
+                    color: #614D40;
+                }
             }
         }
     }

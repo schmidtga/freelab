@@ -37331,11 +37331,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 (function ($) {
   // DOCUMENTO
   $(document).ready(function () {
-    var div = $('.text-body');
-    $('.central').on('scroll', function () {
+    var div = $('.text-container');
+    $(window).on('scroll', function () {
       var st = $(this).scrollTop();
       div.css({
-        'opacity': 0 + st / 500
+        'background': 'rgba(255, 255, 255, ' + (0.5 + st / 1000) + ')'
       });
     });
   });

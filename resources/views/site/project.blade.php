@@ -13,7 +13,7 @@
             <div class="text-container">
                 <div class="title-text-container">
                     <h1>ambulante</h1>
-                    <span class="arrow-up">
+                    <span class="arrow up">
                         <i class="fas fa-angle-double-up"></i>
                     </span>
                 </div>

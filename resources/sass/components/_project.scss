@@ -39,10 +39,11 @@ body.site {
                         text-align: center;
                         color: #614D40;
                     }
-                    span.arrow-up {
+                    span.arrow {
                         position: absolute;
                         top: 10px;
                         right: 20px;
+                        cursor: pointer;
                         i {
                             color: #614D40;
                             font-size: 2rem;

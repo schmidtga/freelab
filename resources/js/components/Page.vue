@@ -1,8 +1,4 @@
-@extends('layouts.site')
-
-@section('title', 'Projeto')
-
-@section('content')
+<template>
 
     <div class="body-container clearfix">
 
@@ -72,11 +68,17 @@
                     </p>
     
                     <div class="container clearfix py-5">
-                        <img class="img-fluid" src="{{ asset('storage/projects/ambulantes.jpg') }}" alt="">
+                        <img class="img-fluid" src="/storage/projects/ambulantes.jpg" alt="Ambulante">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-@endsection
+</template>
+
+<script>
+    export default {
+        props : ['title', 'author']
+    }
+</script>

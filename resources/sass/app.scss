@@ -1,13 +1,11 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
 // Variables
 @import 'variables';
-
-// Bootstrap
-@import '~admin-lte/dist/css/adminlte.min.css';
-@import '~admin-lte/plugins/fontawesome-free/css/all.min.css';
 
 // Components
 @import 'components/index';

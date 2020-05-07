@@ -12,10 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'SiteController@index')->name('site.home');
-Route::get('/projeto', 'SiteController@project')->name('site.project');
 
-Auth::routes();
+//Route::get('/', 'SiteController@index')->name('site.home');
+//Route::get('/projeto', 'SiteController@project')->name('site.project');
+
+Route::get('/{any}', function(){
+    return view('vueapp');
+})->where('any', '.*');
 
 Route::group(
     [
@@ -28,3 +31,5 @@ Route::group(
 
     }
 );
+
+Auth::routes();

@@ -6,9 +6,9 @@
             background: url('./storage/projects/ambulantes.jpg') no-repeat fixed;
             background-size: cover;">
 
-            <div class="text-container">
+            <div class="text-container" data-aos="fade">
                 <div class="title-text-container">
-                    <h1>ambulante</h1>
+                    <h1>{{title}}</h1>
                     <span class="arrow up">
                         <i class="fas fa-angle-double-up"></i>
                     </span>

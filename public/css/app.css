@@ -11214,17 +11214,14 @@ body.site .body-container .img-container {
 body.site .body-container .img-container .text-container {
   position: absolute;
   width: 100%;
-  top: 95vh;
+  top: 100vh;
   background-color: #F8F7F3;
-  background: rgba(255, 255, 255, 0);
   z-index: 9;
 }
 
 body.site .body-container .img-container .text-container .title-text-container {
   position: relative;
   height: 5vh;
-  background-color: #F8F7F3;
-  background: white;
 }
 
 body.site .body-container .img-container .text-container .title-text-container h1 {

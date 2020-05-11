@@ -195,22 +195,21 @@ __webpack_require__.r(__webpack_exports__);
       var height = 600;
       this.canvas.width = width;
       this.canvas.height = height;
-      this.drawRectangle(0, 0, width, height, "#FAFCF1", this.ctx);
-      this.drawRectangle(width / 2 - 100, height / 2 - 150, 200, 300, "#F26D85", this.ctx);
-      this.drawRectangle(280, 20, 120, 190, "#E97FF4", this.ctx);
-      this.drawRectangle(80, 300, 100, 110, "#A4F3F8", this.ctx);
-      this.drawTriangle(250, 400, 200, 450, 300, 450, "#B6FAC1", this.ctx);
-      this.drawCircle(300, 200, 50, 0, 2, "#9193F6", this.ctx);
+      this.drawRectangle(0, 0, width, height, this.randomColor(), this.ctx);
+      this.drawRectangle(width / 2 - 100, height / 2 - 150, 200, 300, this.randomColor(), this.ctx);
+      this.drawRectangle(280, 20, 120, 190, this.randomColor(), this.ctx);
+      this.drawRectangle(80, 300, 100, 110, this.randomColor(), this.ctx);
+      this.drawTriangle(250, 400, 200, 450, 300, 450, this.randomColor(), this.ctx);
+
+      for (var index = 60; index < 500; index += 10) {
+        this.drawCircle(index, index, 50, 0, 2, this.randomColor(), index, this.ctx);
+      }
     },
     drawRectangle: function drawRectangle(x, y, width, height, hexColor, ctx) {
-      var drawFillRect = function drawFillRect(x, y, width, height, hexColor, ctx) {
-        ctx.beginPath();
-        ctx.rect(x, y, width, height);
-        ctx.fillStyle = hexColor;
-        ctx.fill();
-      };
-
-      drawFillRect(x, y, width, height, hexColor, ctx);
+      ctx.beginPath();
+      ctx.rect(x, y, width, height);
+      ctx.fillStyle = hexColor;
+      ctx.fill();
     },
     drawTriangle: function drawTriangle(vert1, vert1Line, vert2, vert2Line, vert3, vert3Line, hexColor, ctx) {
       ctx.beginPath();
@@ -221,11 +220,16 @@ __webpack_require__.r(__webpack_exports__);
       ctx.fillStyle = hexColor;
       ctx.fill();
     },
-    drawCircle: function drawCircle(x, y, size, cut, full, hexColor, ctx) {
+    drawCircle: function drawCircle(x, y, size, cut, full, hexColor, opacity, ctx) {
       ctx.beginPath();
       ctx.arc(x, y, size, cut, full * Math.PI);
+      ctx.globalAlpha = "." + opacity;
       ctx.fillStyle = hexColor;
       ctx.fill();
+    },
+    randomColor: function randomColor() {
+      var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      return randomColor;
     }
   }
 });
@@ -16938,7 +16942,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
 /* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
+/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.vue");
 /* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.vue");
 /* harmony import */ var _components_Project__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Project */ "./resources/js/components/Project.vue");
 
@@ -16979,7 +16983,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: router,
   components: {
-    App: _components_App__WEBPACK_IMPORTED_MODULE_7__["default"]
+    App: _components_App__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   template: '<App/>'
 });

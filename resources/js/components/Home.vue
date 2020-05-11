@@ -34,24 +34,25 @@
                 this.canvas.width = width
                 this.canvas.height = height
                 
-                this.drawRectangle(0, 0, width, height, "#FAFCF1", this.ctx)
-                this.drawRectangle((width/2)-100, (height/2)-150, 200, 300,  "#F26D85", this.ctx)
-                this.drawRectangle(280, 20, 120, 190, "#E97FF4", this.ctx)
-                this.drawRectangle(80, 300, 100, 110, "#A4F3F8", this.ctx)
+                this.drawRectangle(0, 0, width, height, this.randomColor(), this.ctx)
 
-                this.drawTriangle(250, 400, 200, 450, 300, 450, "#B6FAC1", this.ctx)
-                this.drawCircle(300, 200, 50, 0, 2, "#9193F6", this.ctx)
+                this.drawRectangle((width/2)-100, (height/2)-150, 200, 300,  this.randomColor(), this.ctx)
+                this.drawRectangle(280, 20, 120, 190, this.randomColor(), this.ctx)
+                this.drawRectangle(80, 300, 100, 110, this.randomColor(), this.ctx)
+
+                this.drawTriangle(250, 400, 200, 450, 300, 450, this.randomColor(), this.ctx)
+
+                for (let index = 60; index < 500; index += 10) {
+                    this.drawCircle(index, index, 50, 0, 2, this.randomColor(), index, this.ctx)
+                }
 
             },
             drawRectangle: function (x, y, width, height, hexColor, ctx) {
 
-                const drawFillRect = (x, y, width, height, hexColor, ctx) => {
-                    ctx.beginPath()
-                    ctx.rect(x, y, width, height)
-                    ctx.fillStyle = hexColor
-                    ctx.fill()
-                }
-                drawFillRect(x, y, width, height, hexColor, ctx)
+                ctx.beginPath()
+                ctx.rect(x, y, width, height)
+                ctx.fillStyle = hexColor
+                ctx.fill()
 
             },
             drawTriangle: function (vert1, vert1Line, vert2, vert2Line, vert3, vert3Line, hexColor, ctx) {
@@ -65,14 +66,18 @@
                 ctx.fill();
 
             },
-            drawCircle: function (x, y, size, cut, full, hexColor, ctx) {
+            drawCircle: function (x, y, size, cut, full, hexColor, opacity, ctx) {
 
                 ctx.beginPath()
                 ctx.arc(x, y, size, cut, full*Math.PI)
+                ctx.globalAlpha = "." + opacity
                 ctx.fillStyle = hexColor
                 ctx.fill()
             
-
+            },
+            randomColor: function () {
+                const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16)
+                return randomColor
             }
         },
         

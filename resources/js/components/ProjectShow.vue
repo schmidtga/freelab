@@ -8,14 +8,13 @@
 
             <div class="text-container" data-aos="fade">
                 <div class="title-text-container">
-                    <h1>{{title}}</h1>
+                    <h1>{{project.title}}</h1>
                     <span class="arrow up">
                         <i class="fas fa-angle-double-up"></i>
                     </span>
                 </div>
                 <div class="body-text-container py-5">
                     
-    
                     <div class="container clearfix py-5">
                         <img class="img-fluid" src="/storage/projects/ambulantes.jpg" alt="Ambulante">
                     </div>
@@ -27,7 +26,23 @@
 </template>
 
 <script>
+
+    import api from '../api/projects';
+
     export default {
-        props : ['title', 'author']
-    }
+        data() {
+            return {
+                project: {
+                    id: null,
+                    title: "",
+                    description: ""
+                }
+            };
+        },
+        created() {
+            api.find(this.$route.params.id).then((response) => {
+                this.project = response.data.data
+            })
+        }
+    };
 </script>

@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 
 import App from './components/App'
 import Home from './components/Home'
-import Project from './components/Project'
+import ProjectShow from './components/ProjectShow'
 import ProjectIndex from './components/ProjectIndex'
 
 const router = new VueRouter({
@@ -17,17 +17,11 @@ const router = new VueRouter({
             path: '/',
             name: 'home',
             component: Home,
-            props: { title: "HOME" }
         },
         {
-            path: '/project',
-            name: 'project',
-            component: Project,
-            props: {
-                id: 1,
-                title: "Ambulante",
-                description: "ambutestes",
-            }
+            path: '/project/:id',
+            name: 'project.show',
+            component: ProjectShow,
         },
         {
             path: '/projects',
@@ -44,4 +38,4 @@ const app = new Vue({
     router,
     components: { App },
     template: '<App/>'
-});
+})

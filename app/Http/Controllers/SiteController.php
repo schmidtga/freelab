@@ -13,19 +13,8 @@ class SiteController extends Controller
      */
     public function index(Request $request)
     {
-        return view('site.home');
+        return view('vueapp');
     }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function project(Request $request)
-    {
-        return view('site.project');
-    }
-
 
 }
 

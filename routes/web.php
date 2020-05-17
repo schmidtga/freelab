@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', 'SiteController@index')->name('site.home');
 //Route::get('/projeto', 'SiteController@project')->name('site.project');
 
-Route::get('/{any}', function(){
-    return view('vueapp');
-})->where('any', '.*');
+Route::get('/{any}', 'SiteController@index')->where('any', '.*');
+
 
 /*
 Route::group(

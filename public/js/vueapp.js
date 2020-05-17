@@ -2166,6 +2166,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3289,7 +3296,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("nav", { staticClass: "navbar navbar-expand-lg" }, [
+    _c("nav", { staticClass: "navbar navbar-expand-lg fixed-top" }, [
       _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
         _vm._v("FreeLAB")
       ]),
@@ -3446,6 +3453,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "body-container clearfix" }, [
+    _vm._m(0),
+    _vm._v(" "),
     _c(
       "div",
       {
@@ -3455,12 +3464,17 @@ var render = function() {
       [
         _c(
           "div",
-          { staticClass: "text-container", attrs: { "data-aos": "fade" } },
+          {
+            staticClass: "text-container",
+            attrs: {
+              "data-aos": "fade",
+              "data-aos-offset": "100",
+              "data-aos-easing": "ease-in-out"
+            }
+          },
           [
             _c("div", { staticClass: "title-text-container py-5" }, [
-              _c("h1", [_vm._v(_vm._s(_vm.project.title))]),
-              _vm._v(" "),
-              _vm._m(0)
+              _c("h1", [_vm._v(_vm._s(_vm.project.title))])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "body-text-container py-5" }, [

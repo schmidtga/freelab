@@ -10,6 +10,19 @@ body.site {
         clear: none;
         float: none;
         background-color: black;
+        span.arrow {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 9999;
+            i {
+                color: blanchedalmond;
+                font-size: 2rem;
+            }
+        }
         .img-container {
             position: relative;
             width: 100%;
@@ -39,16 +52,6 @@ body.site {
                         text-transform: uppercase;
                         text-align: center;
                         color: #614D40;
-                    }
-                    span.arrow {
-                        position: absolute;
-                        top: 10px;
-                        right: 20px;
-                        cursor: pointer;
-                        i {
-                            color: #614D40;
-                            font-size: 2rem;
-                        }
                     }
                 }
                 .body-text-container {

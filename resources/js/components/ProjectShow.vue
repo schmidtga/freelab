@@ -1,15 +1,22 @@
 <template>
 
     <div class="body-container clearfix">
+        
+        <span class="arrow up">
+            <i class="fas fa-angle-double-up"></i>
+        </span>
 
         <div class="img-container" :style="{ backgroundImage: 'url(' + project.image + ')' }">
 
-            <div class="text-container" data-aos="fade">
+
+            <div class="text-container" 
+                data-aos="fade"
+                data-aos-offset="100"
+                data-aos-easing="ease-in-out">
+
                 <div class="title-text-container py-5">
                     <h1>{{project.title}}</h1>
-                    <span class="arrow up">
-                        <i class="fas fa-angle-double-up"></i>
-                    </span>
+                    
                 </div>
                 <div class="body-text-container py-5">
                     <div v-html="project.description"></div>

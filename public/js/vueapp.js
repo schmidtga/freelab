@@ -176,6 +176,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['title'],
   mounted: function mounted() {
@@ -191,19 +198,41 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     init: function init() {
-      var width = 900;
-      var height = 600;
+      var width = 1000;
+      var height = 610;
       this.canvas.width = width;
       this.canvas.height = height;
       this.drawRectangle(0, 0, width, height, this.randomColor(), this.ctx);
-      this.drawRectangle(width / 2 - 100, height / 2 - 150, 200, 300, this.randomColor(), this.ctx);
-      this.drawRectangle(280, 20, 120, 190, this.randomColor(), this.ctx);
-      this.drawRectangle(80, 300, 100, 110, this.randomColor(), this.ctx);
-      this.drawTriangle(250, 400, 200, 450, 300, 450, this.randomColor(), this.ctx);
 
       for (var index = 60; index < 500; index += 10) {
+        if (index == 100) {
+          this.drawRectangle(60, 60, 180, 180, this.randomColor(), this.ctx);
+        }
+
+        if (index == 150) {
+          this.drawRectangle(80, 80, 220, 220, this.randomColor(), this.ctx);
+        }
+
+        if (index == 250) {
+          this.drawRectangle(100, 100, 240, 240, this.randomColor(), this.ctx);
+        }
+
+        if (index == 300) {
+          this.drawRectangle(120, 120, 260, 260, this.randomColor(), this.ctx);
+        }
+
+        if (index == 350) {
+          this.drawRectangle(140, 140, 280, 280, this.randomColor(), this.ctx);
+        }
+
+        if (index == 400) {
+          this.drawRectangle(160, 160, 300, 300, this.randomColor(), this.ctx);
+        }
+
         this.drawCircle(index, index, 50, 0, 2, this.randomColor(), index, this.ctx);
       }
+
+      this.drawTriangle(480, 480, 480, 600, 600, 600, this.randomColor(), this.ctx);
     },
     drawRectangle: function drawRectangle(x, y, width, height, hexColor, ctx) {
       ctx.beginPath();
@@ -230,6 +259,9 @@ __webpack_require__.r(__webpack_exports__);
     randomColor: function randomColor() {
       var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
       return randomColor;
+    },
+    reloadPage: function reloadPage() {
+      window.location.reload();
     }
   }
 });
@@ -1483,9 +1515,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container pt-5" }, [
-    _c("h1", { staticClass: "py-5" }, [_vm._v(_vm._s(_vm.title))]),
-    _vm._v(" "),
-    _c("canvas", { ref: "canvas", attrs: { id: "canvas" } })
+    _c("div", { staticClass: "row pt-5" }, [
+      _c("div", { staticClass: "col-12 py-1" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success btn-lg",
+            on: { click: _vm.reloadPage }
+          },
+          [_vm._v("Refresh")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 py-1" }, [
+        _c("canvas", { ref: "canvas", attrs: { id: "canvas" } })
+      ])
+    ])
   ])
 }
 var staticRenderFns = []

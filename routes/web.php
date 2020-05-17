@@ -20,6 +20,7 @@ Route::get('/{any}', function(){
     return view('vueapp');
 })->where('any', '.*');
 
+/*
 Route::group(
     [
         'prefix'     => 'admin',
@@ -33,3 +34,4 @@ Route::group(
 );
 
 Auth::routes();
+*/

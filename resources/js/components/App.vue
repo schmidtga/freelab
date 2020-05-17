@@ -1,11 +1,12 @@
 <template>
     <div>
-        <nav class="navbar fixed-top">
-            <router-link :to="{ name: 'home' }" class="nav-brand">freeLAB</router-link>
-            <div class="container">
-                <ul class="navbar-nav">
-                    <router-link :to="{ name: 'project' }" class="nav-link" >ambulante</router-link>
-                </ul>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="/">FreeLAB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <project-index></project-index>
             </div>
         </nav>
         <main>
@@ -14,5 +15,13 @@
     </div>
 </template>
 <script>
-    export default {}
+
+    import ProjectIndex from './ProjectIndex'
+
+    export default {
+        components: {
+            ProjectIndex
+        }
+    }
+
 </script>

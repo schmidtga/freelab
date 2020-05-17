@@ -2166,8 +2166,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2175,6 +2173,7 @@ __webpack_require__.r(__webpack_exports__);
       project: {
         id: null,
         title: "",
+        image: "",
         description: ""
       }
     };
@@ -2184,6 +2183,7 @@ __webpack_require__.r(__webpack_exports__);
 
     _api_projects__WEBPACK_IMPORTED_MODULE_0__["default"].find(this.$route.params.id).then(function (response) {
       _this.project = response.data.data;
+      _this.project.image = '/storage/projects/' + _this.project.image;
     });
   }
 });
@@ -3307,7 +3307,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("main", [_c("router-view")], 1)
+    _c("main", [_c("router-view", { key: _vm.$route.fullPath })], 1)
   ])
 }
 var staticRenderFns = [
@@ -3450,24 +3450,31 @@ var render = function() {
       "div",
       {
         staticClass: "img-container",
-        staticStyle: {
-          background:
-            "url('./storage/projects/ambulantes.jpg') no-repeat fixed",
-          "background-size": "cover"
-        }
+        style: { backgroundImage: "url(" + _vm.project.image + ")" }
       },
       [
         _c(
           "div",
           { staticClass: "text-container", attrs: { "data-aos": "fade" } },
           [
-            _c("div", { staticClass: "title-text-container" }, [
+            _c("div", { staticClass: "title-text-container py-5" }, [
               _c("h1", [_vm._v(_vm._s(_vm.project.title))]),
               _vm._v(" "),
               _vm._m(0)
             ]),
             _vm._v(" "),
-            _vm._m(1)
+            _c("div", { staticClass: "body-text-container py-5" }, [
+              _c("div", {
+                domProps: { innerHTML: _vm._s(_vm.project.description) }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "container clearfix py-5" }, [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: _vm.project.image, alt: _vm.project.title }
+                })
+              ])
+            ])
           ]
         )
       ]
@@ -3481,19 +3488,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "arrow up" }, [
       _c("i", { staticClass: "fas fa-angle-double-up" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "body-text-container py-5" }, [
-      _c("div", { staticClass: "container clearfix py-5" }, [
-        _c("img", {
-          staticClass: "img-fluid",
-          attrs: { src: "/storage/projects/ambulantes.jpg", alt: "Ambulante" }
-        })
-      ])
     ])
   }
 ]
@@ -18575,7 +18569,7 @@ __webpack_require__.r(__webpack_exports__);
     return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/projects');
   },
   find: function find(id) {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/projects/${id}');
+    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/projects/' + id);
   }
 });
 

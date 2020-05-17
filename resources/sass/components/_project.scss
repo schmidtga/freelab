@@ -17,6 +17,10 @@ body.site {
             height: 2000px;
             margin: 0 auto 0 auto;
             text-align: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
             .text-container {
                 position: absolute;
                 width: 100%;
@@ -47,10 +51,13 @@ body.site {
                         }
                     }
                 }
-                p {
-                    font-family: $nunito;
-                    text-align: center;
-                    color: #614D40;
+                .body-text-container {
+                    p {
+                        white-space: pre-line;
+                        font-family: $nunito;
+                        text-align: center;
+                        color: #614D40;
+                    }
                 }
             }
         }

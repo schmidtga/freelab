@@ -11209,6 +11209,10 @@ body.site .body-container .img-container {
   height: 2000px;
   margin: 0 auto 0 auto;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 body.site .body-container .img-container .text-container {
@@ -11247,7 +11251,8 @@ body.site .body-container .img-container .text-container .title-text-container s
   font-size: 2rem;
 }
 
-body.site .body-container .img-container .text-container p {
+body.site .body-container .img-container .text-container .body-text-container p {
+  white-space: pre-line;
   font-family: "Nunito", sans-serif;
   text-align: center;
   color: #614D40;

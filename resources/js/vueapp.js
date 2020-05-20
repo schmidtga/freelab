@@ -8,11 +8,10 @@ Vue.use(VueRouter)
 
 import App from './components/App'
 import Home from './components/Home'
-import ProjectShow from './components/ProjectShow'
-import ProjectIndex from './components/ProjectIndex'
+import Menu from './components/Menu'
+import Project from './components/Project'
 
 const router = new VueRouter({
-    mode: 'history',
     routes: [{
             path: '/',
             name: 'home',
@@ -20,13 +19,13 @@ const router = new VueRouter({
         },
         {
             path: '/project/:id',
-            name: 'project.show',
-            component: ProjectShow,
+            name: 'project',
+            component: Project,
         },
         {
-            path: '/projects',
-            name: 'project.index',
-            component: ProjectIndex,
+            path: '/menu',
+            name: 'menu',
+            component: Menu,
         },
     ],
 })

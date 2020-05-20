@@ -6,7 +6,7 @@
             <i class="fas fa-angle-double-up"></i>
         </span>
 
-        <div class="img-container" :style="{ backgroundImage: 'url(' + project.image + ')' }">
+        <div class="img-container" :style="project.background">
 
 
             <div class="text-container" 
@@ -21,7 +21,7 @@
                 <div class="body-text-container py-5">
                     <div v-html="project.description"></div>
                     <div class="container clearfix py-5">
-                        <img class="img-fluid" :src="project.image" :alt="project.title">
+                        <img class="img-fluid" :src="project.url" :alt="project.title">
                     </div>
                 </div>
             </div>
@@ -40,15 +40,18 @@
                 project: {
                     id: null,
                     title: "",
-                    image: "",
+                    url: "",
+                    background: "",
                     description: ""
-                }
+                },
             };
         },
         created() {
             api.find(this.$route.params.id).then((response) => {
                 this.project = response.data.data
-                this.project.image = '/storage/projects/' + this.project.image
+                this.project.url = '/storage/projects/' + this.project.image
+                this.project.background = 'backgroundImage: url(' + this.project.url + ')'
+                console.log(this.project.background)
             })
         },
     };

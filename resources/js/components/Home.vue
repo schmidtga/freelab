@@ -1,16 +1,8 @@
 <template>
 
-    <div class="container pt-5">
-
-        <div class="row pt-5">
-            <div class="col-12 py-1">
-                <button class="btn btn-success btn-lg" v-on:click="reloadPage">Refresh</button>
-            </div>
-            <div class="col-12 py-1">
-                <canvas id="canvas" ref="canvas"></canvas>
-            </div>
-        </div>
-
+    <div class="home">
+        <canvas id="canvas" ref="canvas"></canvas>
+        <button class="refresh btn btn-success btn-lg" @click="reloadPage">Refresh</button>
     </div>
 
 </template>
@@ -35,32 +27,35 @@
         methods: {
             init: function () {
 
-                const width = 1000
-                const height = 610
+                const width = window.innerWidth
+                const height = window.innerHeight
 
                 this.canvas.width = width
                 this.canvas.height = height
                 
                 this.drawRectangle(0, 0, width, height, this.randomColor(), this.ctx)
 
-                for (let index = 60; index < 500; index += 10) {
-                    if (index == 100) {
-                        this.drawRectangle(60, 60, 180, 180, this.randomColor(), this.ctx)
-                    }
+                for (let index = 120; index < 500; index += 10) {
                     if (index == 150) {
-                        this.drawRectangle(80, 80, 220, 220, this.randomColor(), this.ctx)
+                        this.drawRectangle(index, index, 180, 180, this.randomColor(), this.ctx)
+                    }
+                    if (index == 200) {
+                        this.drawRectangle(index, index, 220, 220, this.randomColor(), this.ctx)
                     }
                     if (index == 250) {
-                        this.drawRectangle(100, 100, 240, 240,  this.randomColor(), this.ctx)
+                        this.drawRectangle(index, index, 240, 240,  this.randomColor(), this.ctx)
                     }
                     if (index == 300) {
-                        this.drawRectangle(120, 120, 260, 260,  this.randomColor(), this.ctx)
+                        this.drawRectangle(index, index, 260, 260,  this.randomColor(), this.ctx)
                     }
                     if (index == 350) {
-                        this.drawRectangle(140, 140, 280, 280,  this.randomColor(), this.ctx)
+                        this.drawRectangle(index, index, 280, 280,  this.randomColor(), this.ctx)
                     }
                     if (index == 400) {
-                        this.drawRectangle(160, 160, 300, 300,  this.randomColor(), this.ctx)
+                        this.drawRectangle(index, index, 300, 300,  this.randomColor(), this.ctx)
+                    }
+                    if (index == 450) {
+                        this.drawRectangle(index, index, 320, 320,  this.randomColor(), this.ctx)
                     }
                     this.drawCircle(index, index, 50, 0, 2, this.randomColor(), index, this.ctx)
                 }

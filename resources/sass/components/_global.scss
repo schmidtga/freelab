@@ -1,5 +1,8 @@
 body.site {
-
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     .navbar {
         background: blanchedalmond;
         a {
@@ -15,7 +18,6 @@ body.site {
             }
         }
     }
-
     .sidenav-left {
         position: fixed;
         top: 0;

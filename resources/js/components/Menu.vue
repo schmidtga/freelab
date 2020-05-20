@@ -2,7 +2,7 @@
     <div class="projects">
         <ul v-if="projects" class="navbar-nav mr-auto">
             <li v-for="project in projects" class="nav-item">
-                <router-link :to="{ name: 'project.show', params: { id: project.id }}" class="nav-link">{{project.title}}</router-link>
+                <router-link :to="{ name: 'project', params: { id: project.id }}" class="nav-link">{{project.title}}</router-link>
             </li>
         </ul>
     </div>

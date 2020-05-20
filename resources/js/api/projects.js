@@ -5,6 +5,6 @@ export default {
         return axios.get('/api/projects')
     },
     find(id) {
-        return axios.get('/api/projects/' + id)
+        return axios.get(`/api/projects/${id}`)
     },
 };

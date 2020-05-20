@@ -6,7 +6,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <project-index></project-index>
+                <project-menu></project-menu>
             </div>
         </nav>
         <main>
@@ -16,11 +16,11 @@
 </template>
 <script>
 
-    import ProjectIndex from './ProjectIndex'
+    import ProjectMenu from './Menu'
 
     export default {
         components: {
-            ProjectIndex
+            ProjectMenu
         }
     }
 

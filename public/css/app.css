@@ -266,6 +266,13 @@ body.app .note-editable.card-block a:link.button:hover {
   display: block;
 }
 
+body.site {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body.site .navbar {
   background: blanchedalmond;
 }
@@ -315,8 +322,20 @@ body.site .sidenav-left h1 span {
   text-transform: lowercase;
 }
 
-body.site .title {
-  color: red;
+body.site #canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body.site .refresh {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  z-index: 9999;
 }
 
 body.site .body-container {

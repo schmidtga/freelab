@@ -10,25 +10,37 @@ import App from './components/App'
 import Home from './components/Home'
 import Menu from './components/Menu'
 import Project from './components/Project'
+import NotFound from './components/NotFound'
+
+const routes = [{
+        path: '/',
+        name: 'home',
+        component: Home,
+    },
+    {
+        path: '/project/:id',
+        name: 'project',
+        component: Project,
+    },
+    {
+        path: '/menu',
+        name: 'menu',
+        component: Menu,
+    },
+    {
+        path: "*",
+        name: 'notfound',
+        component: NotFound,
+    }
+]
 
 const router = new VueRouter({
-    routes: [{
-            path: '/',
-            name: 'home',
-            component: Home,
-        },
-        {
-            path: '/project/:id',
-            name: 'project',
-            component: Project,
-        },
-        {
-            path: '/menu',
-            name: 'menu',
-            component: Menu,
-        },
-    ],
+    mode: 'history',
+    history: true,
+    routes: routes,
+    base: '/'
 })
+
 const app = new Vue({
     created() {
         AOS.init()
